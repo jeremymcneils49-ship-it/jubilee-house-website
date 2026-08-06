@@ -1,0 +1,457 @@
+html {
+    scroll-behavior: smooth;
+    
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: darkblue;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 20px;
+    color: #555;
+
+} 
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url("hero1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    color:white;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45)
+
+}
+
+.hero img,
+.hero h1,
+.hero p,
+.hero button{
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 10px;  /* reduce this value */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+}
+
+.hero p {
+    font-size: 24px;
+    color:white;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.hero img {
+    animation: float 3s ease-in-out infinite;
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0);}
+}
+
+.hero button:hover {
+    background:gold;
+    color:#0b1f66;
+    border: none;
+    padding: 15px 35px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 20px gold;
+}
+
+.hero button:hover {
+    background:white;
+    color:#0b1f66;
+    transform: scale(1.05);
+}
+
+.services {
+    padding: 50px;
+    text-align: center;
+    background-color:white;
+}
+
+.services h2 {
+    color:darkblue;
+    font-size: 35px;
+}
+
+.services p {
+    font-size: 20px;
+}
+
+.about {
+    padding: 60px 20px;
+    background-color:#f4f4f4;
+    text-align: center;
+}
+
+
+.about h2 {
+    font-size: 35px;
+    color: darkblue;
+}
+
+
+.about p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.ministries {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.ministries h2 {
+    color:darkblue;
+    font-size: 35px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background-color:#f4f4f4;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: darkblue;
+}
+
+footer {
+    background-color:darkblue;
+    color:white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px
+}
+
+footer h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: 18px;
+    margin: 10px
+}
+button {
+    background-color:gold;
+    color:darkblue;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.social-icons {
+    margin: 20px 0;
+
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color:#1877f2; /* facebook blue */
+    color:white;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background-color:#145dbf;
+    color:black;
+    transform: scale(1.1);
+}
+
+.map-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 25px;
+    background-color: gold;
+    color:darkblue;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.map-button:hover {
+    background-color:orange;
+    transform: scale(1.05);
+}
+
+.logo {
+    max-width: 220px;
+    width: 100%;            /* make the logo bigger */
+    height: auto;
+    display: block;
+    margin-bottom: 0 auto 25px;  
+}
+.pastor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px 10%;
+    background: #f7f7f7;
+}
+
+.pastor img {
+    width: 320px;
+    border-radius: 12px;
+    border: 5px solid #1e3a8a;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.pastor-text{
+    max-width: 600px;
+}
+
+.pastor-text h2{
+    font-size: 36px;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+ 
+.pastor-text p{
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.pastor-text h3{
+    color:goldenrod;
+}
+
+.prayer {
+    padding:80px 10%;
+    background:#f5f7fb;
+    text-align: center;
+
+}
+
+.prayer h2 {
+    color:#1e3a8a;
+    font-size: 40px;
+    margin-bottom: 15px;
+
+}
+
+.prayer-intro {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    color:#555;
+}
+
+.prayer-form {
+    max-width:700px;
+    margin: auto;
+}
+
+.payer-form input,
+.prayer-form textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.prayer-form input:focus,
+.prayer-form textarea:focus{
+    border-color:gold;
+    outline:none;
+}
+
+.prayer-form button{
+    background: #1e3a8a;
+    color:white;
+    border:none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.prayer-form button:hover{
+    background:gold;
+    color:#1e3a8a;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction:column;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction:column;
+        gap: 15px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero img {
+        width: 130px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .pastor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pastor img {
+        width: 220px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .prayer-form {
+        width: 100%;
+    }
+
+
+    img {
+    max-width: 100%;
+    height: auto;
+    }    
+    .menu-toggle {
+        display:none;
+        display:block;
+        font-size: 30px;
+        cursor:pointer;
+        color:white;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    #nav-links {
+        display:none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    #nav-links.active {
+        display:flex;
+    }    
+}

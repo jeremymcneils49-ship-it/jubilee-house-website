@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JUILEE HOUSE INTERNATIONAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+</head>
+<body> 
+
+    <nav>
+        <div class="logo">Jubilee House</div>
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776;  
+        </div>
+        <ul id="nav-links">        
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#ministries">Departments</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#prayer">Prayer</a></li>
+            <li><a href="#contact">Contact</a></li>
+         </ul>
+
+    </nav>
+
+    <section  id="home" class="hero">
+        <img src="logoj.PNG" alt="Jubilee House Logo" class="logo">
+        <h1>WELCOME TO JUBILEE HOUSE INTERNATIONAL WORSHIP CENTRE</h1>
+        <P>THE CITY OF CELEBRITIES.</P>
+        <button>Join Us This Sunday</button>
+    </section>
+
+    <section id="services" class="services">
+        <h2> Service Times</h2>
+
+        <p><strong> Sunday Worship: </strong>7:30 AM TO 11:00 AM</p>
+        <P><strong>Wednesday Healing And Deliverance Service: </strong> 6:00 PM TO 8:00 PM</P>
+        <P><strong> ALL-NIGHT Every First Friday Of The Month: </strong>10:00 PM TO 3:00 PM</P>
+    </section>
+
+    <section id="pastor" class="pastor">
+        <img src="pastor.JPG" alt="Head Pastor"> 
+
+        <div class="pastor-text">
+            <h2> A Message From Our Head Pastor</h2>
+
+            <p>Welcome to Jubilee House International Worship Centre.
+                We are delighted that you are here. Our paryer is that
+                you will experience the love of Christ, grow in His Word,
+                and discover God's purpose for your life.
+            </p>
+
+            <p>Whether this is your first visit or you have been with us
+                for years, you are family. we look forward to worshipping
+                with you.
+            </p>
+
+            <h3> Head Pastor Elisha Elijah</h3>
+        </div>
+    </section>
+
+    <section id="prayer"  class="payer">
+
+        <h2>Prayer Request</h2>
+        <p class="prayer-intro">
+            We would be glad to pray with you. Fill out the form below and our prayer team will stand with you in faith.
+        </p>
+
+        <form class="prayer-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Adress" required>
+            <input type="tel" placeholder="Phone Nhumber">
+            <textarea placeholder="Share your prayer request..." rows="6" required></textarea>
+            <button type="submit">Submit Prayer Request</button> 
+        </form>
+    </section>    
+    <section id="about" class="about">
+        <h2>About Us</h2>
+
+        <p>
+            Jubilee House International Worship Centre is Christ-Centered Church Committed to
+            Preaching the Gospel, raising disciples, and impacting the community through 
+            worship, prayer, and deeper teaching of the word. 
+        </p>
+    </section>
+
+    <section id="ministries" class="ministries">
+        <h2> Our Department</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Children/Teenagers Ministry</h3>
+                <p>Enabling our children to grow in christ through fun and biblical teaching.</p>
+            </div>
+            <div class="card">
+                <h3>Youth Ministry</h3>
+                <p>Empowering young people to become strong followers of Jesus.</p>
+            </div>
+            <div class="card">
+                <h3>Choristers/Choir</h3>
+                <P>Leading the congregation in a heartfelt worship through music and songs that glorifies GOD.</P>
+            </div>
+            <div class="card">
+                <h3>Media Team</h3>
+                <p>Using technology and creativity to spread the Gospel.</p>
+            </div>
+            <div class="card">
+                <h3>Ushering Depertment</h3>
+                <p>Welcoming every visitor with love and creating a warm atmosphere for worship.</p>
+            </div>
+            
+        </div>
+    </section>
+ <footer id="contact">
+    <h2>Contact Us</h2>
+    <p><srtong> Adress:</srtong>Jubilee Arena, No. 42, Calvary Road Aso, Mararaba-Nyanya, Abuja Nigeria</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=behind+galaxy+school,+calvary+road,+aso,+mararaba,+karu,+nasarawa+state" target="_black" class="map-button">
+        Get Directions
+    </a>
+    <p><strong>Phone:</strong>+2348164547868,+2349131699510</p>
+    <p><strong>Email:</strong>info@jubileehouse.org</p>
+    <h3>Follow Us</h3>
+    <div class="social-icons">
+        <a href="https://facebook.com/Jubilee House International Worship Center" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/your_page" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2026 Jubilee House International Worship Center. All Right Reserved.</p>
+ </footer>
+ 
+ <script>
+document.addEventListener("DOMContentLoaded",
+function (){
+    const menuToggle=
+document.getElementById("menu-toggle");
+    const navLinks =
+document.getElementById("nav-links");
+
+  if (menuToggle && navLinks){
+    menuToggle.addEventListener("click",function()
+{
+    navLinks.classList.toggle("active");
+    console.log("Menu toggled.Active class is now:", navLinks.classList.contains("active"));
+    });
+}else{
+ console.error("Menu elements not found!"); 
+ }
+});
+
+ </script>
+</body> 
