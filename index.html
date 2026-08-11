@@ -183,6 +183,37 @@
             
         </div>
     </section>
+
+    <section id="gallery" class="gallery-section">
+        
+        <h2>Church Gallery</h2>
+        <p class="section-subtitle">
+            Moments from our worship, fellowship and special programs 
+        </p>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="gallery1.JPG" alt="church worship service">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery2.JPG" alt="church congregation">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery3.JPG" alt="church choir">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery4.JPG" alt="church program">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery5.JPG" alt="church fellowship">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery6.JPG" alt="church worship">
+            </div>
+
+        </div>
+    </section>
  <footer id="contact">
     <h2>Contact Us</h2>
     <p><srtong> Adress:</srtong>Jubilee Arena, No. 42, Calvary Road Aso, Mararaba-Nyanya, Abuja Nigeria</p>
@@ -211,6 +242,12 @@
     </div>
     <p>&copy; 2026 Jubilee House International Worship Center. All Right Reserved.</p>
  </footer>
+
+ 
+<div id="galleryLightbox" class="gallery-lightbox">
+    <span class="gallery-close">&times;</span>
+    <img id="lightboxImage" src="" alt="Gallery image">
+</div>
  
  <script>
 
@@ -295,5 +332,27 @@ async function loadDailyVerse() {
 
 loadDailyVerse();
 
+const galleryImages = document.querySelectorAll('.gallery-item img');
+const galleryLightbox = document.getElementById('galleryLightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const galleryClose = document.querySelector('.gallery-close');
+
+galleryImages.forEach(image => {
+    image.addEventListener('click', function () {
+        galleryLightbox.style.display = 'flex';
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+    });
+});
+
+galleryClose.addEventListener('click', function ()  {
+    galleryLightbox.style.display = 'none';
+});
+
+galleryLightbox.addEventListener('click', function(event)  {
+    if (event.target === galleryLightbox){
+        galleryLightbox.style.display = 'none';
+    }
+});
  </script>
 </body> 

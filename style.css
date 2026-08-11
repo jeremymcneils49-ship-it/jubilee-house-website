@@ -894,7 +894,7 @@ body.dark-mode .daily-verse #dialyVerse {
 }
 
 body.dark-mode .daily-verse #dialyVerse p {
-    color:#ffffffss !important;
+    color:#ffffff !important;
 }
 
 body.dark-mode .daily-verse #verseReference {
@@ -955,4 +955,105 @@ body.dark-mode .daily-verse #verseReference {
         width: 100%;
         box-sizing: border-box;
     }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap:20px;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+}
+
+.gallery-section {
+    padding:70px 20px;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.gallery-section h2 {
+    font-size: 36px;
+    color:#0b1f66;
+    margin-bottom: 10px;
+}
+
+.gallery-section .section-subtitle {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.gallery-container {
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+}
+
+.gallery-item {
+    height: 250px;
+    overflow:hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+body.dark-mode .gallery-section{
+    background: #121212;
+}
+
+body.dark-mode .gallery-section h2 {
+    color:white;
+}
+body.dark-mode .gallery-section .section-subtitle {
+    color: #ccc;
+}
+
+.gallery-lightbox {
+    display:none;
+    position:fixed;
+    z-index:9999;
+    inset:0;
+    background: rgba(0,0,0,0.9);
+    align-items:center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.gallery-close {
+    position: absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size: 45px;
+    font-weight: bold;
+    cursor:pointer;
+    z-index:10000px
+}
+
+.gallery-close:hover {
+    color:gold;
+}
+
+.gallery-item img {
+    cursor:pointer;
 }
