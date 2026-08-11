@@ -12,10 +12,9 @@
 <body> 
 
     <nav>
-        <div class="logo">Jubilee House</div>
-        <div class="menu-toggle" id="menu-toggle">
-            &#9776;  
-        </div>
+
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
         <ul id="nav-links">        
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -23,8 +22,17 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#prayer">Prayer</a></li>
             <li><a href="#contact">Contact</a></li>
-         </ul>
+        </ul>
 
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <button id="darkModeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </nav>
 
     <section  id="home" class="hero">
@@ -37,6 +45,16 @@
            rel="noopener norereferrer">
            Join Us This Sunday
         </a>
+    </section>
+
+    <section class="daily-verse">
+        <div class="verse-container">
+            <i class="fas fa-book-open"></i>
+            <h2>Verse of the Day</h2>
+
+            <p id="dailyVerse">Loading todays verse...</p>
+            <h3 id="verseReference"></h3>
+        </div>
     </section>
 
     <section id="services" class="services">
@@ -123,6 +141,48 @@
             
         </div>
     </section>
+
+    <section id="events" class="event-section">
+        <h2>Upcoming Events</h2>
+        <p class="section-subtitle">Join us for our upcoming programs</p>
+
+        <div class="event-container">
+
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="month">AUG</span>
+                    <span class="day">23</span>
+                </div>
+
+                <div class="event-info">
+                    <h3 Church Convention></h3>
+                    <p><i class="fas fa-clock"></i>10;00 AM</p>
+                    <P><i class="fas fa-location-dot"></i>Jubilee House</P>
+                    <p>Join us for a powerful time of worship, teaching and fellowship.</p>
+
+                    <a href="#" class="event-button">View Event</a>
+                </div>
+            </div>
+        
+
+            <div class="event-card">
+                <div clasS="event-date">
+                    <span class="month">SEP</span>
+                    <span class="day">06</span>
+                </div>
+
+                <div class="event-info">
+                    <h3 Thanksgiving Service></h3>
+                    <p><i class="fas fa-clock"></i>8:00 AM</p>
+                    <p><i class="fas fa-location-dot"></i>Jubilee House</p>
+                    <p>Come together as we give thanks and celebrate God's faithfulness.</p>
+
+                    <a href="#" class="event-button">View Event</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
  <footer id="contact">
     <h2>Contact Us</h2>
     <p><srtong> Adress:</srtong>Jubilee Arena, No. 42, Calvary Road Aso, Mararaba-Nyanya, Abuja Nigeria</p>
@@ -153,23 +213,87 @@
  </footer>
  
  <script>
-document.addEventListener("DOMContentLoaded",
-function (){
-    const menuToggle=
-document.getElementById("menu-toggle");
-    const navLinks =
-document.getElementById("nav-links");
 
-  if (menuToggle && navLinks){
-    menuToggle.addEventListener("click",function()
-{
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
-    console.log("Menu toggled.Active class is now:", navLinks.classList.contains("active"));
-    });
-}else{
- console.error("Menu elements not found!"); 
- }
+  });
+}    
+
+const darkModeToggle = document.getElementById("darkModeToggle");
+const icon = darkModeToggle.querySelector("i");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    icon.classList.replace("fa-moon", "fa-sun");
+}
+
+// Toggle theme
+darkModeToggle.addEventListener("click", () => {
+    icon.style.transform = "rotate(360deg)";
+    setTimeout(() => {
+        icon.style.transform = "rotate(0deg)";
+    }, 400);
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+    } else{
+        localStorage.setItem("theme", "light");
+        icon.classList.replace("fa-sun", "fa-moon");
+        }
 });
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function () {
+    const search = this.value.toLowerCase();
+
+    document.querySelectorAll("section").forEach(section => {
+        const text = section.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+            section.style.display = "";
+        } else {
+            section.style.display = "none";
+        }
+    });
+});
+
+async function loadDailyVerse() {
+    try {
+        const response = await fetch(
+            "https://labs.bible.org/api/?passage=votd&type=json&formatting=plain"
+        );
+    
+        if (!response.ok) {
+            throw new Error("failed to load Bible verse");
+        }
+        const data = await response.json();
+        
+        document.getElementById("dailyVerse").textContent =
+            `"${data[0].text}"`;
+
+        document.getElementById("verseReference").textContent =
+            data[0].bookname + " " + data[0].chapter + ":" + data[0].verse;
+
+    } catch (error) {
+        console.error("Verse error:);", error);
+
+        document.getElementById("dailyVerse").textContent =
+            "Unable to load today's verse. Please reconnect to internet and try again.";
+
+        document.getElementById("verseReference").textContent = "";
+    }
+}
+
+loadDailyVerse();
 
  </script>
 </body> 
