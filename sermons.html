@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Listen to sermons from Jubilee House International Worship Centre.">
+    <title>Sermons | Jubilee House International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sermons-page">
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="index.html#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <div class="nav-panel" id="mobileMenu">
+                <button class="close-menu" id="closeMenu" type="button" aria-label="Close menu"><i class="fas fa-xmark"></i></button>
+                <ul id="nav-links">
+                    <li><a href="index.html#home">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Visit</a></li><li><a href="index.html#ministries">Ministries</a></li><li><a href="index.html#events">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="account.html">Account</a></li><li><a href="give.html">Give</a></li><li><a class="nav-cta" href="index.html#contact">Find Us <i class="fas fa-arrow-right"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sermon-hero"><div class="section-wrap sermon-hero-content"><p class="eyebrow">WORDS THAT STAY WITH YOU</p><h1>Latest<br><em>sermons.</em></h1><p>Messages to encourage your faith, steady your heart, and help you walk with God through the week.</p><a class="text-link" href="index.html#home">Back to Jubilee House <i class="fas fa-arrow-right"></i></a></div></section>
+        <section class="sermon-library"><div class="section-wrap"><div class="sermon-heading"><div><p class="eyebrow">THE MESSAGE LIBRARY</p><h2>Listen and grow.</h2></div><label class="sermon-search"><i class="fas fa-search"></i><input id="sermonSearch" type="search" placeholder="Search messages" aria-label="Search sermons"></label></div><div class="sermon-grid" id="sermonList">
+            <article class="sermon-card"><div class="sermon-image"><img src="sermon1.jpg" alt="The Power of Faith sermon"></div><div class="sermon-content"><span class="sermon-date">August 15, 2026</span><h3>The Power of Faith</h3><p class="sermon-speaker">Pastor Elisha Elijah</p><div class="sermon-actions"><audio controls preload="none"><source src="audio/sermon1.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio><a href="audio/sermon1.mp3" download class="download-btn" aria-label="Download The Power of Faith"><i class="fas fa-download"></i></a></div></div></article>
+            <article class="sermon-card"><div class="sermon-image"><img src="sermon2.jpg" alt="Walking With God sermon"></div><div class="sermon-content"><span class="sermon-date">August 10, 2026</span><h3>Walking With God</h3><p class="sermon-speaker">Pastor Elisha Elijah</p><div class="sermon-actions"><audio controls preload="none"><source src="audio/sermon2.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio><a href="audio/sermon2.mp3" download class="download-btn" aria-label="Download Walking With God"><i class="fas fa-download"></i></a></div></div></article>
+            <article class="sermon-card"><div class="sermon-image"><img src="sermon3.jpg" alt="Trusting God sermon"></div><div class="sermon-content"><span class="sermon-date">August 3, 2026</span><h3>Trusting God</h3><p class="sermon-speaker">Pastor Elisha Elijah</p><div class="sermon-actions"><audio controls preload="none"><source src="audio/sermon3.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio><a href="audio/sermon3.mp3" download class="download-btn" aria-label="Download Trusting God"><i class="fas fa-download"></i></a></div></div></article>
+        </div><p class="no-results" id="noResults">No sermons match your search.</p></div></section>
+    </main>
+
+    <footer id="contact"><div class="section-wrap footer-grid"><div><a class="brand footer-brand" href="index.html#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a><p>A place to belong, believe, and become.</p></div><div><p class="footer-label">VISIT US</p><p>Jubilee Arena, No. 42, Calvary Road Aso,<br>Mararaba-Nyanya, Abuja, Nigeria</p><a class="footer-link" href="index.html#contact">Contact the church <i class="fas fa-arrow-right"></i></a></div><div><p class="footer-label">SAY HELLO</p><p><a href="tel:+2348164547868">+234 816 454 7868</a><br><a href="mailto:kingborngreat3@gmail.com">kingborngreat3@gmail.com</a></p><div class="social-icons"><a href="https://facebook.com/elisha.elijah.262653" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/your_page" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></div><div class="footer-bottom section-wrap"><span>&copy; 2026 Jubilee House International Worship Centre</span><span>All are welcome.</span></div></footer>
+    <script src="script.js"></script>
+    <script>
+        const sermonSearch = document.getElementById("sermonSearch");
+        const sermonCards = document.querySelectorAll(".sermon-card");
+        const noResults = document.getElementById("noResults");
+
+        sermonSearch.addEventListener("input", () => {
+            const query = sermonSearch.value.trim().toLowerCase();
+            let visibleCards = 0;
+            sermonCards.forEach((card) => {
+                const matches = card.textContent.toLowerCase().includes(query);
+                card.hidden = !matches;
+                if (matches) visibleCards += 1;
+            });
+            noResults.hidden = visibleCards !== 0;
+        });
+    </script>
+</body>
+</html>

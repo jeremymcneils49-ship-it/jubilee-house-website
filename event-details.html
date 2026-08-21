@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Event details for Jubilee House International Worship Centre.">
+    <title>Event Details | Jubilee House International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="event-details-page">
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="index.html#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <div class="nav-panel" id="mobileMenu"><button class="close-menu" id="closeMenu" type="button" aria-label="Close menu"><i class="fas fa-xmark"></i></button><ul id="nav-links"><li><a href="index.html#home">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Visit</a></li><li><a href="index.html#ministries">Ministries</a></li><li><a href="index.html#events">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="account.html">Account</a></li><li><a href="give.html">Give</a></li><li><a class="nav-cta" href="index.html#contact">Find Us <i class="fas fa-arrow-right"></i></a></li></ul></div>
+        </nav>
+    </header>
+    <main>
+        <section class="event-detail-hero"><div class="section-wrap event-detail-hero-content"><p class="eyebrow">JUBILEE HOUSE EVENTS</p><h1 id="eventTitle">Church Convention</h1><p id="eventIntro">A time of worship, teaching, fellowship, and spiritual renewal.</p></div></section>
+        <section class="event-detail-section"><div class="section-wrap event-detail-grid"><div><p class="eyebrow">EVENT DETAILS</p><h2 id="eventPurposeTitle">Gather, worship, and grow.</h2><p id="eventPurpose">Join us for a powerful time in God's presence as we worship together, receive biblical teaching, and strengthen our church family.</p><a class="button button-gold" href="https://www.google.com/maps/dir/?api=1&destination=Jubilee+Arena,+No.+42,+Calvary+Road+Aso,+Mararaba-Nyanya,+Abuja,+Nigeria&travelmode=driving" target="_blank" rel="noopener noreferrer">Get directions <i class="fas fa-location-arrow"></i></a></div><div class="event-detail-card"><div><i class="fas fa-calendar-day"></i><span>Date<strong id="eventDate">August 23, 2026</strong></span></div><div><i class="fas fa-clock"></i><span>Time<strong id="eventTime">10:00 AM</strong></span></div><div><i class="fas fa-location-dot"></i><span>Venue<strong id="eventVenue">Jubilee House International</strong></span></div></div></div></section>
+        <section class="event-people"><div class="section-wrap"><p class="eyebrow">WHO IS SERVING</p><h2>Ministers and guests</h2><div class="event-people-grid"><article><i class="fas fa-microphone-lines"></i><span>Host minister</span><strong id="eventHost">Pastor Elisha Elijah</strong><p>Founder &amp; Head Pastor, Jubilee House International</p></article><article><i class="fas fa-users"></i><span>Guest ministers</span><strong id="eventGuests">Guest ministers to be announced</strong><p>Check back for the full ministry lineup.</p></article><article><i class="fas fa-bullseye"></i><span>Event focus</span><strong id="eventFocus">Worship and spiritual renewal</strong><p>Come ready to receive, connect, and grow.</p></article></div></div></section>
+    </main>
+    <footer id="contact"><div class="section-wrap footer-grid"><div><a class="brand footer-brand" href="index.html#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a><p>A place to belong, believe, and become.</p></div><div><p class="footer-label">VISIT US</p><p>Jubilee Arena, No. 42, Calvary Road Aso,<br>Mararaba-Nyanya, Abuja, Nigeria</p><a class="footer-link" href="index.html#contact">Contact the church <i class="fas fa-arrow-right"></i></a></div><div><p class="footer-label">SAY HELLO</p><p><a href="tel:+2348164547868">+234 816 454 7868</a><br><a href="mailto:kingborngreat3@gmail.com">kingborngreat3@gmail.com</a></p><div class="social-icons"><a href="https://facebook.com/elisha.elijah.262653" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/your_page" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></div><div class="footer-bottom section-wrap"><span>&copy; 2026 Jubilee House International Worship Centre</span><span>All are welcome.</span></div></footer>
+    <script src="script.js"></script>
+    <script>
+        const events = {
+            convention: { title: "Church Convention", intro: "A time of worship, teaching, fellowship, and spiritual renewal.", purposeTitle: "Gather, worship, and grow.", purpose: "Join us for a powerful time in God's presence as we worship together, receive biblical teaching, and strengthen our church family.", date: "August 23, 2026", time: "10:00 AM", guests: "Guest ministers to be announced", focus: "Worship and spiritual renewal" },
+            thanksgiving: { title: "Thanksgiving Service", intro: "A joyful gathering to celebrate God's faithfulness together.", purposeTitle: "Celebrate God's faithfulness.", purpose: "Come with a grateful heart as we give thanks, share testimonies, and celebrate the goodness of God as one church family.", date: "September 6, 2026", time: "8:00 AM", guests: "Guest ministers to be announced", focus: "Thanksgiving and testimonies" }
+        };
+        const event = events[new URLSearchParams(window.location.search).get("event")] || events.convention;
+        document.title = `${event.title} | Jubilee House International`;
+        document.getElementById("eventTitle").textContent = event.title;
+        document.getElementById("eventIntro").textContent = event.intro;
+        document.getElementById("eventPurposeTitle").textContent = event.purposeTitle;
+        document.getElementById("eventPurpose").textContent = event.purpose;
+        document.getElementById("eventDate").textContent = event.date;
+        document.getElementById("eventTime").textContent = event.time;
+        document.getElementById("eventGuests").textContent = event.guests;
+        document.getElementById("eventFocus").textContent = event.focus;
+    </script>
+</body>
+</html>

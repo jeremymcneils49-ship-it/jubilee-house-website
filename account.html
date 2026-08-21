@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create or access your Jubilee House visitor account.">
+    <title>Account | Jubilee House International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="account-page">
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="index.html#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <div class="nav-panel" id="mobileMenu">
+                <button class="close-menu" id="closeMenu" type="button" aria-label="Close menu"><i class="fas fa-xmark"></i></button>
+                <ul id="nav-links">
+                    <li><a href="index.html#home">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Visit</a></li><li><a href="index.html#ministries">Ministries</a></li><li><a href="index.html#events">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="account.html" aria-current="page">Account</a></li><li><a href="give.html">Give</a></li><li><a class="nav-cta" href="index.html#contact">Find Us <i class="fas fa-arrow-right"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="account-main">
+        <section class="account-intro"><div><p class="eyebrow">YOUR JUBILEE HOUSE</p><h1>Stay connected<br><em>to the family.</em></h1><p>Register to keep your details close and make it easier to stay connected with church life.</p><div class="account-points"><span><i class="fas fa-calendar-check"></i> Keep up with events</span><span><i class="fas fa-heart"></i> Share prayer requests</span><span><i class="fas fa-book-open"></i> Return to sermons</span></div></div></section>
+        <section class="account-panel"><div class="account-card"><div class="account-tabs" role="tablist" aria-label="Account actions"><button class="account-tab active" id="registerTab" type="button" role="tab" aria-selected="true" aria-controls="registerPanel">Create account</button><button class="account-tab" id="loginTab" type="button" role="tab" aria-selected="false" aria-controls="loginPanel">Log in</button></div><div class="account-form-panel active" id="registerPanel" role="tabpanel" aria-labelledby="registerTab"><p class="eyebrow">WELCOME IN</p><h2>Create your account</h2><p class="account-muted">Join the Jubilee House community online.</p><form id="registerForm"><label>Full name<input id="registerName" name="name" type="text" autocomplete="name" required></label><label>Email address<input id="registerEmail" name="email" type="email" autocomplete="email" required></label><label>Password<span class="password-field"><input id="registerPassword" name="password" type="password" autocomplete="new-password" minlength="6" required><button class="password-toggle" type="button" data-target="registerPassword" aria-label="Show password"><i class="fas fa-eye"></i></button></span></label><label class="check-row"><input name="updates" type="checkbox"> <span>Send me occasional church updates and event news.</span></label><button class="button button-gold account-submit" type="submit">Create account <i class="fas fa-arrow-right"></i></button><p class="account-status" id="registerStatus" role="status"></p></form></div><div class="account-form-panel" id="loginPanel" role="tabpanel" aria-labelledby="loginTab" hidden><p class="eyebrow">WELCOME BACK</p><h2>Log in to your account</h2><p class="account-muted">Pick up where you left off with Jubilee House.</p><form id="loginForm"><label>Email address<input id="loginEmail" name="email" type="email" autocomplete="email" required></label><label>Password<span class="password-field"><input id="loginPassword" name="password" type="password" autocomplete="current-password" required><button class="password-toggle" type="button" data-target="loginPassword" aria-label="Show password"><i class="fas fa-eye"></i></button></span></label><button class="button button-gold account-submit" type="submit">Log in <i class="fas fa-arrow-right"></i></button><p class="account-status" id="loginStatus" role="status"></p></form></div><p class="account-note"><i class="fas fa-heart"></i> Stay connected with Jubilee House for worship, events, sermons, and church family moments.</p></div></section>
+    </main>
+
+    <footer id="contact"><div class="section-wrap footer-grid"><div><a class="brand footer-brand" href="index.html#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a><p>A place to belong, believe, and become.</p></div><div><p class="footer-label">VISIT US</p><p>Jubilee Arena, No. 42, Calvary Road Aso,<br>Mararaba-Nyanya, Abuja, Nigeria</p><a class="footer-link" href="index.html#contact">Contact the church <i class="fas fa-arrow-right"></i></a></div><div><p class="footer-label">SAY HELLO</p><p><a href="tel:+2348164547868">+234 816 454 7868</a><br><a href="mailto:kingborngreat3@gmail.com">kingborngreat3@gmail.com</a></p><div class="social-icons"><a href="https://facebook.com/elisha.elijah.262653" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/your_page" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></div><div class="footer-bottom section-wrap"><span>&copy; 2026 Jubilee House International Worship Centre</span><span>All are welcome.</span></div></footer>
+    <script src="script.js"></script>
+    <script src="account.js"></script>
+</body>
+</html>

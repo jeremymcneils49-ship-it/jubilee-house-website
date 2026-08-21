@@ -1,358 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>JUILEE HOUSE INTERNATIONAL</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
+    <meta name="description" content="Jubilee House International Worship Centre in Abuja, Nigeria.">
+    <title>Jubilee House International | A Place to Belong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-
-    <nav>
-
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-
-        <ul id="nav-links">        
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#ministries">Departments</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#prayer">Prayer</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <div class="header-right">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search...">
-                <i class="fas fa-search"></i>
+<body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <div class="nav-panel" id="mobileMenu">
+                <button class="close-menu" id="closeMenu" type="button" aria-label="Close menu"><i class="fas fa-xmark"></i></button>
+                <ul id="nav-links">
+                    <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Visit</a></li><li><a href="#ministries">Ministries</a></li><li><a href="#events">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="account.html">Account</a></li><li><a href="give.html">Give</a></li><li><a class="nav-cta" href="#contact">Find Us <i class="fas fa-arrow-right"></i></a></li>
+                </ul>
             </div>
-            <button id="darkModeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </nav>
-
-    <section  id="home" class="hero">
-        <img src="logoj.PNG" alt="Jubilee House Logo" class="logo">
-        <h1>WELCOME TO JUBILEE HOUSE INTERNATIONAL WORSHIP CENTRE</h1>
-        <P>THE CITY OF CELEBRITIES.</P>
-        <a href="https://www.google.com/maps/search/?api=1&query=behind+galaxy+school,+calvary+road,+aso,+mararaba,+karu,+nasarawa+state"
-           target="_blank" 
-           class="hero-btn"
-           rel="noopener norereferrer">
-           Join Us This Sunday
-        </a>
-    </section>
-
-    <section class="daily-verse">
-        <div class="verse-container">
-            <i class="fas fa-book-open"></i>
-            <h2>Verse of the Day</h2>
-
-            <p id="dailyVerse">Loading todays verse...</p>
-            <h3 id="verseReference"></h3>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <h2> Service Times</h2>
-
-        <p><strong> Sunday Worship: </strong>7:30 AM TO 11:00 AM</p>
-        <P><strong>Wednesday Healing And Deliverance Service: </strong> 6:00 PM TO 8:00 PM</P>
-        <P><strong> ALL-NIGHT Every First Friday Of The Month: </strong>10:00 PM TO 3:00 PM</P>
-    </section>
-
-    <section id="pastor" class="pastor">
-        <img src="pastor.JPG" alt="Head Pastor"> 
-
-        <div class="pastor-text">
-            <h2> A Message From Our Head Pastor</h2>
-
-            <p>Welcome to Jubilee House International Worship Centre.
-                We are delighted that you are here. Our paryer is that
-                you will experience the love of Christ, grow in His Word,
-                and discover God's purpose for your life.
-            </p>
-
-            <p>Whether this is your first visit or you have been with us
-                for years, you are family. we look forward to worshipping
-                with you.
-            </p>
-
-            <h3> Head Pastor Elisha Elijah</h3>
-        </div>
-    </section>
-
-    <section id="prayer"  class="payer">
-
-        <h2>Prayer Request</h2>
-        <p class="prayer-intro">
-            We would be glad to pray with you. Fill out the form below and our prayer team will stand with you in faith.
-        </p>
-
-        <form class="prayer-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Adress" required>
-            <input type="tel" placeholder="Phone Nhumber">
-            <textarea placeholder="Share your prayer request..." rows="6" required></textarea>
-            <button onclick="window.location.href='mailto:kingborngreat3@gmail.com?subject=Prayer%20Request'">
-                Submit Prayer Request
-            </button> 
-        </form>
-    </section>    
-    <section id="about" class="about">
-        <h2>About Us</h2>
-
-        <p>
-            Jubilee House International Worship Centre is Christ-Centered Church Committed to
-            Preaching the Gospel, raising disciples, and impacting the community through 
-            worship, prayer, and deeper teaching of the word. 
-        </p>
-    </section>
-
-    <section id="ministries" class="ministries">
-        <h2> Our Department</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Children/Teenagers Ministry</h3>
-                <p>Enabling our children to grow in christ through fun and biblical teaching.</p>
-            </div>
-            <div class="card">
-                <h3>Youth Ministry</h3>
-                <p>Empowering young people to become strong followers of Jesus.</p>
-            </div>
-            <div class="card">
-                <h3>Choristers/Choir</h3>
-                <P>Leading the congregation in a heartfelt worship through music and songs that glorifies GOD.</P>
-            </div>
-            <div class="card">
-                <h3>Media Team</h3>
-                <p>Using technology and creativity to spread the Gospel.</p>
-            </div>
-            <div class="card">
-                <h3>Ushering Depertment</h3>
-                <p>Welcoming every visitor with love and creating a warm atmosphere for worship.</p>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="events" class="event-section">
-        <h2>Upcoming Events</h2>
-        <p class="section-subtitle">Join us for our upcoming programs</p>
-
-        <div class="event-container">
-
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">AUG</span>
-                    <span class="day">23</span>
-                </div>
-
-                <div class="event-info">
-                    <h3 Church Convention></h3>
-                    <p><i class="fas fa-clock"></i>10;00 AM</p>
-                    <P><i class="fas fa-location-dot"></i>Jubilee House</P>
-                    <p>Join us for a powerful time of worship, teaching and fellowship.</p>
-
-                    <a href="#" class="event-button">View Event</a>
-                </div>
-            </div>
-        
-
-            <div class="event-card">
-                <div clasS="event-date">
-                    <span class="month">SEP</span>
-                    <span class="day">06</span>
-                </div>
-
-                <div class="event-info">
-                    <h3 Thanksgiving Service></h3>
-                    <p><i class="fas fa-clock"></i>8:00 AM</p>
-                    <p><i class="fas fa-location-dot"></i>Jubilee House</p>
-                    <p>Come together as we give thanks and celebrate God's faithfulness.</p>
-
-                    <a href="#" class="event-button">View Event</a>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="gallery" class="gallery-section">
-        
-        <h2>Church Gallery</h2>
-        <p class="section-subtitle">
-            Moments from our worship, fellowship and special programs 
-        </p>
-
-        <div class="gallery-container">
-
-            <div class="gallery-item">
-                <img src="gallery1.JPG" alt="church worship service">
-            </div>
-            <div class="gallery-item">
-                <img src="gallery2.JPG" alt="church congregation">
-            </div>
-            <div class="gallery-item">
-                <img src="gallery3.JPG" alt="church choir">
-            </div>
-            <div class="gallery-item">
-                <img src="gallery4.JPG" alt="church program">
-            </div>
-            <div class="gallery-item">
-                <img src="gallery5.JPG" alt="church fellowship">
-            </div>
-            <div class="gallery-item">
-                <img src="gallery6.JPG" alt="church worship">
-            </div>
-
-        </div>
-    </section>
- <footer id="contact">
-    <h2>Contact Us</h2>
-    <p><srtong> Adress:</srtong>Jubilee Arena, No. 42, Calvary Road Aso, Mararaba-Nyanya, Abuja Nigeria</p>
-    <a href="https://www.google.com/maps/search/?api=1&query=behind+galaxy+school,+calvary+road,+aso,+mararaba,+karu,+nasarawa+state" target="_black" class="map-button">
-        Get Directions
-    </a>
-    <p><strong>Phone:</strong></p>
-    <p>
-        <a href="tel:+2348164547868">+2348164547868</a>
-    </p>
-    <p>
-        <a href="tel:+2349131699510">+2349131699510</a>
-    </p>
-    <p><strong>Email:</strong></p>
-    <p>
-        <a href="mailto:kingborngreat3@gmail.com">kingborngreat3@gmail.com</a>
-    </p>
-    <h3>Follow Us</h3>
-    <div class="social-icons">
-        <a href="https://facebook.com/elisha.elijah.262653" target="_blank">
-            <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com/your_page" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-    </div>
-    <p>&copy; 2026 Jubilee House International Worship Center. All Right Reserved.</p>
- </footer>
-
- 
-<div id="galleryLightbox" class="gallery-lightbox">
-    <span class="gallery-close">&times;</span>
-    <img id="lightboxImage" src="" alt="Gallery image">
-</div>
- 
- <script>
-
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-}    
-
-const darkModeToggle = document.getElementById("darkModeToggle");
-const icon = darkModeToggle.querySelector("i");
-
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    icon.classList.replace("fa-moon", "fa-sun");
-}
-
-// Toggle theme
-darkModeToggle.addEventListener("click", () => {
-    icon.style.transform = "rotate(360deg)";
-    setTimeout(() => {
-        icon.style.transform = "rotate(0deg)";
-    }, 400);
-
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        icon.classList.replace("fa-moon", "fa-sun");
-    } else{
-        localStorage.setItem("theme", "light");
-        icon.classList.replace("fa-sun", "fa-moon");
-        }
-});
-
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("keyup", function () {
-    const search = this.value.toLowerCase();
-
-    document.querySelectorAll("section").forEach(section => {
-        const text = section.innerText.toLowerCase();
-
-        if (text.includes(search)) {
-            section.style.display = "";
-        } else {
-            section.style.display = "none";
-        }
-    });
-});
-
-async function loadDailyVerse() {
-    try {
-        const response = await fetch(
-            "https://labs.bible.org/api/?passage=votd&type=json&formatting=plain"
-        );
-    
-        if (!response.ok) {
-            throw new Error("failed to load Bible verse");
-        }
-        const data = await response.json();
-        
-        document.getElementById("dailyVerse").textContent =
-            `"${data[0].text}"`;
-
-        document.getElementById("verseReference").textContent =
-            data[0].bookname + " " + data[0].chapter + ":" + data[0].verse;
-
-    } catch (error) {
-        console.error("Verse error:);", error);
-
-        document.getElementById("dailyVerse").textContent =
-            "Unable to load today's verse. Please reconnect to internet and try again.";
-
-        document.getElementById("verseReference").textContent = "";
-    }
-}
-
-loadDailyVerse();
-
-const galleryImages = document.querySelectorAll('.gallery-item img');
-const galleryLightbox = document.getElementById('galleryLightbox');
-const lightboxImage = document.getElementById('lightboxImage');
-const galleryClose = document.querySelector('.gallery-close');
-
-galleryImages.forEach(image => {
-    image.addEventListener('click', function () {
-        galleryLightbox.style.display = 'flex';
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-    });
-});
-
-galleryClose.addEventListener('click', function ()  {
-    galleryLightbox.style.display = 'none';
-});
-
-galleryLightbox.addEventListener('click', function(event)  {
-    if (event.target === galleryLightbox){
-        galleryLightbox.style.display = 'none';
-    }
-});
- </script>
-</body> 
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home"><div class="hero-content"><p class="eyebrow">WELCOME HOME</p><h1>Faith grows<br><em>together.</em></h1><p class="hero-copy">A Christ-centered family in Abuja, creating room for worship, purpose, and every story.</p><div class="hero-actions"><a class="button button-gold" href="#services">Plan your visit <i class="fas fa-arrow-right"></i></a><a class="text-link" href="sermons.html">Watch a sermon <i class="fas fa-play"></i></a></div></div><div class="hero-note"><span class="hero-note-icon"><i class="fas fa-sun"></i></span><span><strong>Sunday worship</strong><br>7:30 AM – 11:00 AM</span></div></section>
+        <section class="welcome-strip"><p>“We exist to preach the Gospel, raise disciples, and make a difference.”</p><a href="#about">Our story <i class="fas fa-arrow-right"></i></a></section>
+        <section class="verse-section"><div class="section-wrap verse-grid"><div><p class="eyebrow">A WORD FOR TODAY</p><h2>Let His word<br>meet you here.</h2></div><div class="verse-card"><i class="fas fa-quote-left"></i><p id="dailyVerse">Loading today's verse...</p><strong id="verseReference"></strong></div></div></section>
+        <section class="visit-section" id="services"><div class="section-wrap"><div class="section-heading"><div><p class="eyebrow">COME AS YOU ARE</p><h2>There is a place<br>for you here.</h2></div><p>Whether it is your first Sunday or your hundredth, you are welcome at Jubilee House.</p></div><div class="service-grid"><article><span class="service-icon"><i class="fas fa-church"></i></span><h3>Sunday Worship</h3><p>Every Sunday<br><strong>7:30 AM – 11:00 AM</strong></p></article><article><span class="service-icon"><i class="fas fa-hands-praying"></i></span><h3>Healing &amp; Deliverance</h3><p>Wednesdays<br><strong>6:00 PM – 8:00 PM</strong></p></article><article><span class="service-icon"><i class="fas fa-moon"></i></span><h3>All-Night Service</h3><p>First Friday monthly<br><strong>10:00 PM – 3:00 AM</strong></p></article></div></div></section>
+        <section class="about-section" id="about"><div class="section-wrap about-grid"><div class="image-stack"><img class="about-main-image" src="Church interior.jpg" alt="Inside Jubilee House during worship"><img class="about-small-image" src="gallery2.JPG" alt="Jubilee House congregation"></div><div class="about-copy"><p class="eyebrow">WHO WE ARE</p><h2>More than a building.<br>A family.</h2><p>Jubilee House International Worship Centre is a Christ-centered church committed to preaching the Gospel, raising disciples, and impacting our community through worship, prayer, and the deeper teaching of God's Word.</p><p>We are learning to follow Jesus in everyday life, together. Come find your people, discover your purpose, and grow in grace.</p><a class="button button-navy" href="#contact">Meet us this Sunday <i class="fas fa-arrow-right"></i></a></div></div></section>
+        <section class="pastor-section"><div class="section-wrap pastor-grid"><img src="pastor.JPG" alt="Founder Pastor Elisha Elijah"><div><p class="eyebrow">A MESSAGE FROM OUR FOUNDER</p><blockquote>“Our prayer is that you will experience the love of Christ, grow in His Word, and discover God's purpose for your life.”</blockquote><p class="signature">Pastor Elisha Elijah</p><p>Founder &amp; Head Pastor, Jubilee House International</p></div></div></section>
+        <section class="ministries-section" id="ministries"><div class="section-wrap"><div class="section-heading"><div><p class="eyebrow">FIND YOUR PLACE</p><h2>Life is better<br>together.</h2></div><p>There is space for every age and every season of life in our church family.</p></div><div class="ministry-grid"><article><i class="fas fa-child"></i><h3>Children &amp; Teens</h3><p>Growing curious, courageous faith.</p></article><article><i class="fas fa-bolt"></i><h3>Youth Ministry</h3><p>Purpose, friendship, and a faith of their own.</p></article><article><i class="fas fa-music"></i><h3>Worship &amp; Choir</h3><p>Leading hearts into wholehearted praise.</p></article><article><i class="fas fa-video"></i><h3>Media Team</h3><p>Taking the message beyond our walls.</p></article></div></div></section>
+        <section class="events-section" id="events"><div class="section-wrap"><p class="eyebrow">MARK YOUR CALENDAR</p><h2>Coming up at Jubilee</h2><div class="event-grid"><article><div class="event-date"><b>AUG</b><strong>23</strong></div><div><h3>Church Convention</h3><p><i class="fas fa-clock"></i> 10:00 AM · Jubilee House</p><p>A powerful time of worship, teaching, and fellowship.</p><a class="event-button" href="event-details.html?event=convention">View event <i class="fas fa-arrow-right"></i></a></div></article><article><div class="event-date"><b>SEP</b><strong>06</strong></div><div><h3>Thanksgiving Service</h3><p><i class="fas fa-clock"></i> 8:00 AM · Jubilee House</p><p>Come together as we celebrate God's faithfulness.</p><a class="event-button" href="event-details.html?event=thanksgiving">View event <i class="fas fa-arrow-right"></i></a></div></article></div></div></section>
+        <section class="prayer-section" id="prayer"><div class="section-wrap prayer-grid"><div><p class="eyebrow">WE ARE LISTENING</p><h2>Share your prayer.<br>We will stand with you.</h2><p>Our prayer team would be glad to pray with you in faith.</p></div><form class="prayer-form" id="prayerForm"><label>Full name<input type="text" name="name" required></label><label>Email address<input type="email" name="email" required></label><label>Your prayer request<textarea name="request" rows="4" required></textarea></label><button class="button button-gold" type="submit">Send prayer request <i class="fas fa-arrow-right"></i></button><p class="form-status" id="formStatus" role="status"></p></form></div></section>
+    </main>
+    <footer id="contact"><div class="section-wrap footer-grid"><div><a class="brand footer-brand" href="#home"><img src="logoj.PNG" alt="Jubilee House logo"><span>Jubilee House<small>International Worship Centre</small></span></a><p>A place to belong, believe, and become.</p></div><div><p class="footer-label">VISIT US</p><p>Jubilee Arena, No. 42, Calvary Road Aso,<br>Mararaba-Nyanya, Abuja, Nigeria</p><a class="footer-link" href="https://www.google.com/maps/search/?api=1&query=behind+galaxy+school,+calvary+road,+aso,+mararaba,+karu,+nasarawa+state" target="_blank" rel="noopener noreferrer">Get directions <i class="fas fa-arrow-up-right-from-square"></i></a></div><div><p class="footer-label">SAY HELLO</p><p><a href="tel:+2348164547868">+234 816 454 7868</a><br><a href="mailto:kingborngreat3@gmail.com">kingborngreat3@gmail.com</a></p><div class="social-icons"><a href="https://facebook.com/elisha.elijah.262653" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/your_page" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></div><div class="footer-bottom section-wrap"><span>&copy; 2026 Jubilee House International Worship Centre</span><span>All are welcome.</span></div></footer>
++    <script src="script.js"></script>
++</body>
++</html>
