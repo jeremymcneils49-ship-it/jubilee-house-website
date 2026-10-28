@@ -89,13 +89,23 @@ if (bankDetails && requestDetailsLink) {
     requestDetailsLink.innerHTML = 'Request details <i class="fas fa-arrow-up"></i>';
 }
 
-const prayerForm = document.getElementById("prayerForm");
-const formStatus = document.getElementById("formStatus");
-
-if (prayerForm && formStatus) {
+document.querySelectorAll(".prayer-form").forEach((prayerForm) => {
     prayerForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        formStatus.textContent = "Thank you. Our prayer team will stand with you in faith.";
-        prayerForm.reset();
+
+        const formData = new FormData(prayerForm);
+        const name = String(formData.get("name") || "").trim();
+        const email = String(formData.get("email") || "").trim();
+        const request = String(formData.get("request") || "").trim();
+        const subject = "Prayer Request";
+        const body = `Prayer request from ${name}\nEmail: ${email}\n\n${request}`;
+        const mailtoUrl = `mailto:kingborngreat3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const formStatus = prayerForm.querySelector(".form-status");
+
+        if (formStatus) {
+            formStatus.textContent = "Your email app is opening with your prayer request. Please review and send the email to share it with our prayer team.";
+        }
+
+        window.location.href = mailtoUrl;
     });
-}
+});
